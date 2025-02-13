@@ -112,23 +112,6 @@ function ParseBlock(block, engine)
     end
   end
 
-  -- When echo: false: disable the editor
-  if (attr.echo == false) then
-    attr.edit = false
-  end
-
-  -- When `include: false`: disable the editor, source block echo, and output
-  if (attr.include == false) then
-    attr.edit = false
-    attr.echo = false
-    attr.output = false
-  end
-
-  -- If we're not executing anything, there's no point showing an editor
-  if (attr.edit == nil) then
-    attr.edit = attr.eval
-  end
-
   return {
     code = code,
     attr = attr
@@ -255,6 +238,11 @@ function PyodideCodeBlock(code)
     block_input = input,
   }
 
+  -- If we're not executing anything, there's no point showing an editor
+  if (block.attr.edit == nil) then
+    block.attr.edit = block.attr.eval
+  end
+
   -- Render appropriate OJS for the type of client-side block we're working with
   local ojs_source = nil
   if (block.attr.exercise) then
@@ -272,7 +260,7 @@ function PyodideCodeBlock(code)
   append_ojs_template(ojs_source, ojs_vars)
 
   return pandoc.Div({
-    pandoc.Div({}, pandoc.Attr("pyodide-" .. block_id, { 'exercise-cell' })),
+    pandoc.Div({}, pandoc.Attr("pyodide-" .. block_id)),
     pandoc.RawBlock(
       "html",
       "<script type=\"pyodide-" .. block_id .. "-contents\">\n" ..
@@ -368,6 +356,11 @@ function WebRCodeBlock(code)
     block_input = input,
   }
 
+  -- If we're not executing anything, there's no point showing an editor
+  if (block.attr.edit == nil) then
+    block.attr.edit = block.attr.eval
+  end
+
   -- Render appropriate OJS for the type of client-side block we're working with
   local ojs_source = nil
   if (block.attr.exercise) then
@@ -388,7 +381,7 @@ function WebRCodeBlock(code)
   HTMLWidget(block_id)
 
   return pandoc.Div({
-    pandoc.Div({}, pandoc.Attr("webr-" .. block_id, { 'exercise-cell' })),
+    pandoc.Div({}, pandoc.Attr("webr-" .. block_id)),
     pandoc.RawBlock(
       "html",
       "<script type=\"webr-" .. block_id .. "-contents\">\n" ..
@@ -528,10 +521,7 @@ function setupPyodide(doc)
 
   -- Initial Pyodide startup options
   local pyodide_options = {
-    indexURL = "https://cdn.jsdelivr.net/pyodide/v0.27.0/full/",
-    env = {
-      PLOTLY_RENDERER = 'plotly_mimetype',
-    }
+    indexURL = "https://cdn.jsdelivr.net/pyodide/v0.26.1/full/",
   }
   if (pyodide["engine-url"]) then
     pyodide_options["indexURL"] = pandoc.utils.stringify(pyodide["engine-url"])
@@ -596,7 +586,7 @@ function setupWebR(doc)
 
   -- Initial webR startup options
   local webr_options = {
-    baseUrl = "https://webr.r-wasm.org/v0.4.2/",
+    baseUrl = "https://webr.r-wasm.org/v0.4.1/"
   }
   if (webr["engine-url"]) then
     webr_options["baseUrl"] = pandoc.utils.stringify(webr["engine-url"])
