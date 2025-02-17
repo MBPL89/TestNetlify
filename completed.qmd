@@ -53,7 +53,6 @@ editor_options:
 
 # Talking with Python
 
-![Coding is fun!!!](gif/coding_is_fun.gif){width="700"}
 
 In this part of the course we will leverage the following resources:
 
@@ -609,7 +608,6 @@ print(v)
 
 Everything from the \# to the end of the line is ignored; it has no effect on the program.
 
-![**On completing your first Python class!**](gif/congrats.webp){fig-align="left" width="700"}
 
 ::: disclaimer
 <p><strong>Images and GIFs Disclaimer:</strong> Some of the images and GIFs used on this website are not owned by me. They are used for educational and illustrative purposes only. All rights belong to their respective owners. If you believe any content violates copyright, please contact me for prompt removal.</p>
