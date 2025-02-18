@@ -5,10 +5,10 @@ format: live-html
 pyodide:
   packages:
     - numpy
+    
 editor_options: 
   chunk_output_type: console
 ---
-
 ```{=html}
 <style>
 /* Target the first tab (Demo) */
@@ -48,32 +48,26 @@ editor_options:
 }
 </style>
 ```
+
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}} {{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
 
-# Talking with Python
+```{pyodide}
+#| autorun: true
+#| startover: false
+#| edit: false
+#| runbutton: false
+#| echo: true
+import sys
+from io import StringIO
 
+```
+
+# Talking with Python
 
 In this part of the course we will leverage the following resources:
 
 -   [Intro to Python book](https://automatetheboringstuff.com)
 
-::: {#custom-timer}
-```{r}
-#| echo: false
-library(countdown)
-countdown(
-  minutes = 5, 
-  seconds = 0, 
-  play_sound = TRUE,  # Play a sound when the timer finishes
-  warn_when = 180,    # Warn when 180 seconds are left
-  blink_colon = TRUE,
-  font_size = "1.5rem",  # Set smaller font size
-  start_immediately = FALSE,  # Start the timer automatically
-  color_background = "#f2f2f2",  # Neutral background color
-  color_border = "darkred"
-)
-```
-:::
 
 ```{=html}
 <style>
@@ -89,6 +83,7 @@ countdown(
   }
 </style>
 ```
+
 Python is amazingly complex and powerful. It is also very picky about the syntax you use to communicate with it. However, Python is not intelligent. You are really just having a conversation with yourself, but using proper syntax. Python is a way for the creators of programs to express how the conversation is supposed to proceed.
 
 Programming languages like Python need to be translated. There are two types of "translator": (1) `interpreters` and (2) `compilers`.
@@ -117,10 +112,10 @@ During this course you will learn how to write and execute your function but als
 
 ```{pyodide}
 #| autorun: false
-#| startover: false
+#| startover: true
 #| min-lines: 3
 #| completion: true
-help()
+help(print)
 
 ```
 
@@ -531,6 +526,13 @@ Try it yourself:
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
 inp = input()
 ```
 
@@ -543,6 +545,12 @@ print(inp)
 ```
 
 You can pass a string to `input` to be displayed to the user before pausing for input:
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| autorun: false
@@ -570,14 +578,21 @@ Now you can try it yourself.
 3.  Transform `number` variable to an integer using `int()` (use `help()` if you need it)
 
 4.  Calculate the difference between the user and an average person (an average person reads 1 book a month)
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
 b = input("books \n")
+b = int(b)
 b = b - 1
 b = str(b)
-print('you read ' + b + ' books than the average person')
+print('you read ' + b + ' books more than the average person')
 ```
 
 **Attention!!!**\
@@ -606,11 +621,11 @@ print(v)
 
 Everything from the \# to the end of the line is ignored; it has no effect on the program.
 
+::: disclaimer
+<p><strong>Images and GIFs Disclaimer:</strong> Some of the images and GIFs used on this website are not owned by me. They are used for educational and illustrative purposes only. All rights belong to their respective owners. If you believe any content violates copyright, please contact me for prompt removal.</p>
+:::
 
-<div class="disclaimer">
-  <p><strong>Images and GIFs Disclaimer:</strong> Some of the images and GIFs used on this website are not owned by me. They are used for educational and illustrative purposes only. All rights belong to their respective owners. If you believe any content violates copyright, please contact me for prompt removal.</p>
-</div>
-
+```{=html}
 <style>
 .disclaimer {
   font-size: 0.8em;
@@ -620,9 +635,7 @@ Everything from the \# to the end of the line is ignored; it has no effect on th
   margin-top: 20px;
 }
 </style>
-
-
-
+```
 
 ```{=html}
 <div>

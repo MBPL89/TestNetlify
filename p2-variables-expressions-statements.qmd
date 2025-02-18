@@ -48,14 +48,25 @@ editor_options:
 }
 </style>
 ```
+
 {{< include ./_extensions/r-wasm/live/_knitr.qmd >}} {{< include ./_extensions/r-wasm/live/_gradethis.qmd >}}
+```{pyodide}
+#| autorun: true
+#| startover: false
+#| edit: false
+#| runbutton: false
+#| echo: true
+import sys
+from io import StringIO
+
+```
 
 
 ## Introduction
 
 1)  Run the following code. What is wrong with it?
 
-:::callout-important
+::: callout-important
 Rewrite it and fix the errors.
 :::
 
@@ -67,7 +78,7 @@ primt 'Hello world!'
 
 2)  What will be the output of the following code?
 
-:::callout-warning
+::: callout-warning
 Try to answer before running it.
 :::
 
@@ -87,9 +98,170 @@ Make sure your output looks exactly like this
 
 `Enter Hours: 35 Enter Rate: 2.75 Pay: 96.25`
 
-:::callout-caution
+::: callout-caution
 Pay attention to the **type** of your variables
 :::
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+
+## Python Homework Problems
+
+### 1. Basic Arithmetic Operations
+Write a Python script that takes two numbers from the user and prints their sum, difference, product, and quotient.
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 2. Converting Fahrenheit to Celsius
+Write a program that asks the user to enter a temperature in Fahrenheit, converts it to Celsius, and prints the result.  
+**Formula:**  
+C = (5/9) * (F - 32)
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 3. Simple Interest Calculation
+Write a Python program that asks the user for Principal (P), Rate of Interest (R), and Time in years (T), then calculates and prints the Simple Interest paid.  
+**Formula:**  
+SI = (P * R * T) / 100
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 4. Swapping Two Numbers
+Write a Python program that swaps two numbers entered by the user. Given the order of entry, the numbers should be printed in reverse order.  
+**Example Output:**  
+```
+This is the first number: ...
+This is the second number: ...
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 5. Perimeter of a Rectangle
+Write a Python program that asks the user to enter the length and width of a rectangle and calculates its perimeter.  
+**Formula:**  
+P = 2 * (L + W)
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 6. Convert Seconds to Minutes and Hours
+Write a program that takes an input of the number of seconds and converts it into minutes and hours. Prints separate messages with the resulting minutes and hours. Choose a meaningful message for each output.
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 7. String Concatenation
+Write a program that asks the user for first name and last name, then prints them together in one line.
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 8. Calculating Discounts
+Write a Python program that asks for the original price of a product and the discount percentage, then calculates and prints the final price.  
+**Formula:**  
+Final Price = Original Price - (Discount * Original Price / 100)
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+
+```
+
+### 9. Calculating Average of Three Numbers
+Write a program that takes three numbers as input and prints their average.
+Collapse
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
+mock_input = StringIO()
+sys.stdin = mock_input
+```
 
 ```{pyodide}
 #| autorun: false
