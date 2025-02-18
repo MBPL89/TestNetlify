@@ -55,7 +55,7 @@ editor_options:
 #| startover: false
 #| edit: false
 #| runbutton: false
-#| echo: true
+#| echo: false
 import sys
 from io import StringIO
 
