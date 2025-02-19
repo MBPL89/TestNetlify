@@ -106,6 +106,13 @@ Pay attention to the **type** of your variables
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
+mock_input = StringIO("...\n...\n...\n")
+sys.stdin = mock_input
+```
+
+```{pyodide}
+#| autorun: false
+#| min-lines: 3
 
 ```
 
@@ -118,7 +125,7 @@ Write a Python script that takes two numbers from the user and prints their sum,
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -136,7 +143,7 @@ C = (5/9) * (F - 32)
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n")
 sys.stdin = mock_input
 ```
 
@@ -154,7 +161,7 @@ SI = (P * R * T) / 100
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -175,7 +182,7 @@ This is the second number: ...
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -193,7 +200,7 @@ P = 2 * (L + W)
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -209,7 +216,7 @@ Write a program that takes an input of the number of seconds and converts it int
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n")
 sys.stdin = mock_input
 ```
 
@@ -225,7 +232,7 @@ Write a program that asks the user for first name and last name, then prints the
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -243,7 +250,7 @@ Final Price = Original Price - (Discount * Original Price / 100)
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -255,12 +262,11 @@ sys.stdin = mock_input
 
 ### 9. Calculating Average of Three Numbers
 Write a program that takes three numbers as input and prints their average.
-Collapse
 
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n...\n")
 sys.stdin = mock_input
 ```
 

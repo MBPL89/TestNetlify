@@ -526,7 +526,7 @@ Try it yourself:
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n")
 sys.stdin = mock_input
 ```
 
@@ -548,7 +548,7 @@ You can pass a string to `input` to be displayed to the user before pausing for 
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
@@ -581,7 +581,7 @@ Now you can try it yourself.
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO()
+mock_input = StringIO("...\n")
 sys.stdin = mock_input
 ```
 
