@@ -106,7 +106,7 @@ Pay attention to the **type** of your variables
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-mock_input = StringIO("...\n...\n...\n")
+mock_input = StringIO("...\n...\n")
 sys.stdin = mock_input
 ```
 
