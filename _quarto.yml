@@ -10,8 +10,10 @@ website:
         text: Session 1 Starter
       - href: completed.qmd
         text: Session 1 Completed
-      - href: p2-variables-expressions-statements.qmd
-        text: Session 1 Practice
+      - text: "Practice"
+        menu:
+        - p2-variables-expressions-statements.qmd
+        - p2-variables-expressions-statements_solution.qmd
       # - href: https://omis482-f2024-class-website.netlify.app #add your website
       #   text: Go to the Course Website
 

@@ -1,5 +1,6 @@
 ---
-title: "1. Practice: Variables and Statements"
+title: "1. Practice: Solution"
+draft: true
 author: "Dr. Piccoli"
 format: live-html
 pyodide:
@@ -62,10 +63,9 @@ from io import StringIO
 
 ```
 
-
 ## Introduction
 
-####  Intro 1.  Run the following code. What is wrong with it?
+#### Intro 1. Run the following code. What is wrong with it?
 
 ::: callout-important
 Rewrite it and fix the errors.
@@ -77,7 +77,7 @@ Rewrite it and fix the errors.
 primt 'Hello world!'
 ```
 
-####  Intro 2.  What will be the output of the following code?
+#### Intro 2. What will be the output of the following code?
 
 ::: callout-warning
 Try to answer before running it.
@@ -93,7 +93,7 @@ print(x)
 
 ### Variables
 
-####  Intro 3.  Write a program to prompt the user for hours and rate per hour to compute gross pay.
+#### Intro 3. Write a program to prompt the user for hours and rate per hour to compute gross pay.
 
 Make sure your output looks exactly like this
 
@@ -117,13 +117,19 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+hours = input("Enter Hours: \n")
+rate = input("Enter Rate: \n")
+hours = float(hours)
+rate = float(rate)
+pay = hours * rate
+pay = str(pay)
+print("Pay: ", pay)
 ```
-
 
 ## Python Homework Problems
 
 ### 1. Basic Arithmetic Operations
+
 Write a Python script that takes two numbers from the user and prints their sum, difference, product, and quotient.
 
 ```{pyodide}
@@ -136,13 +142,19 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+numOne = float(input())
+numTwo = float(input())
+print(numOne + numTwo)
+print(numOne - numTwo)
+print(numOne * numTwo)
+print(numOne / numTwo)
 ```
 
 ### 2. Converting Fahrenheit to Celsius
-Write a program that asks the user to enter a temperature in Fahrenheit, converts it to Celsius, and prints the result.  
-**Formula:**  
-C = (5/9) * (F - 32)
+
+Write a program that asks the user to enter a temperature in Fahrenheit, converts it to Celsius, and prints the result.\
+**Formula:**\
+C = (5/9) \* (F - 32)
 
 ```{pyodide}
 #| autorun: false
@@ -154,13 +166,16 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+far = float(input("Please enter temperature in Fahrenheit: \n"))
+cels = str(5/9 * (far-32))
+print("The temperature in Celsius is ", cels)
 ```
 
 ### 3. Simple Interest Calculation
-Write a Python program that asks the user for Principal (P), Rate of Interest (R), and Time in years (T), then calculates and prints the Simple Interest paid.  
-**Formula:**  
-SI = (P * R * T) / 100
+
+Write a Python program that asks the user for Principal (P), Rate of Interest (R), and Time in years (T), then calculates and prints the Simple Interest paid.\
+**Formula:**\
+SI = (P \* R \* T) / 100
 
 ```{pyodide}
 #| autorun: false
@@ -172,13 +187,19 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+principal = float(input())
+rate = float(input())
+time = float(input())
+paidInterest = str(principal * rate * time / 100)
+print("The simple interest paid is ", paidInterest)
 ```
 
 ### 4. Swapping Two Numbers
-Write a Python program that swaps two numbers entered by the user. Given the order of entry, the numbers should be printed in reverse order.  
-**Example Output:**  
-```
+
+Write a Python program that swaps two numbers entered by the user. Given the order of entry, the numbers should be printed in reverse order.\
+**Example Output:**
+
+```         
 This is the first number: ...
 This is the second number: ...
 ```
@@ -193,13 +214,17 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+numOne = input("This is the first number: \n")
+numTwo = input("This is the second number: \n")
+print("This was the second number: ", numTwo)
+print("This was the first number: ", numOne)
 ```
 
 ### 5. Perimeter of a Rectangle
-Write a Python program that asks the user to enter the length and width of a rectangle and calculates its perimeter.  
-**Formula:**  
-P = 2 * (L + W)
+
+Write a Python program that asks the user to enter the length and width of a rectangle and calculates its perimeter.\
+**Formula:**\
+P = 2 \* (L + W)
 
 ```{pyodide}
 #| autorun: false
@@ -211,10 +236,17 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+length = input("Enter length of the rectangle: \n")
+width = input("Enter width of the rectangle: \n")
+length = float(length)
+width = float(width)
+perimeter = 2 * (length + width)
+perimeter = str(perimeter)
+print("The perimeter of the rectangle is: ", perimeter)
 ```
 
 ### 6. Convert Seconds to Minutes and Hours
+
 Write a program that takes an input of the number of seconds and converts it into minutes and hours. Prints separate messages with the resulting minutes and hours. Choose a meaningful message for each output.
 
 ```{pyodide}
@@ -227,10 +259,18 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+seconds = input("Enter the number of seconds: \n")
+seconds = int(seconds)
+minutes = seconds / 60
+hours = minutes / 60
+seconds = str(seconds)
+minutes = str(minutes)
+hours = str(hours)
+print("Given ", seconds, " seconds, we have ", minutes, " minutes and ", hours, " hours.")
 ```
 
 ### 7. String Concatenation
+
 Write a program that asks the user for first name and last name, then prints them together in one line.
 
 ```{pyodide}
@@ -243,13 +283,17 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+firstName = input("Enter your first name: \n")
+lastName = input("Enter your last name: \n")
+fullName = firstName + " " + lastName
+print("Your full name is: ", fullName)
 ```
 
 ### 8. Calculating Discounts
-Write a Python program that asks for the original price of a product and the discount percentage, then calculates and prints the final price.  
-**Formula:**  
-Final Price = Original Price - (Discount * Original Price / 100)
+
+Write a Python program that asks for the original price of a product and the discount percentage, then calculates and prints the final price.\
+**Formula:**\
+Final Price = Original Price - (Discount \* Original Price / 100)
 
 ```{pyodide}
 #| autorun: false
@@ -261,10 +305,14 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+price = float(input())
+discount = float(input())
+finalPrice = str(price - (discount * price / 100))
+print("The final price is ", finalPrice)
 ```
 
 ### 9. Calculating Average of Three Numbers
+
 Write a program that takes three numbers as input and prints their average.
 
 ```{pyodide}
@@ -277,7 +325,11 @@ sys.stdin = mock_input
 ```{pyodide}
 #| autorun: false
 #| min-lines: 3
-
+firstNumber = float(input())
+secondNumber = float(input())
+thirdNumber = float(input())
+average = str((firstNumber + secondNumber + thirdNumber) / 3)
+print("The average of the three numbers ", average)
 ```
 
 ```{=html}
