@@ -13,9 +13,12 @@ website:
       - text: "Practice"
         menu:
         - p2-variables-expressions-statements.qmd
-      #  - p2-variables-expressions-statements_solution.qmd
+        - p2-variables-expressions-statements_solution.qmd
       # - href: https://omis482-f2024-class-website.netlify.app #add your website
       #   text: Go to the Course Website
+  drafts:
+    - p2-variables-expressions-statements_solution.qmd
+  draft-mode: gone
 
 format:
   html:
